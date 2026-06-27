@@ -38,18 +38,59 @@
 
     <header class="hero">
 
-        <h1>Labs & Learning Path</h1>
+        <h1>Labs & Learning Path (Under construction) </h1>
 
         <h2>Practical Networking Experience</h2>
 
         <p>
-            Hands-on exercises focused on networking,
-            systems and infrastructure technologies.
+        Currently building this section to improve your experience
         </p>
 
     </header>
 
-    <!-- LABS -->
+<div class="engranes-container">
+  <svg class="engrane-grande" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <path d="M50 0 L55 5 L62 2 L65 7 L72 5 L75 12 L82 10 L85 17 L92 15 L93 22 L98 22 L99 30 L100 50 L99 70 L98 78 L93 78 L92 85 L85 83 L82 90 L75 88 L72 95 L65 93 L62 98 L55 95 L50 100 L45 95 L38 98 L35 93 L28 95 L25 88 L18 90 L15 83 L8 85 L7 78 L2 78 L1 70 L0 50 L1 30 L2 22 L7 22 L8 15 L15 17 L18 10 L25 12 L28 5 L35 7 L38 2 L45 5 Z" fill="#FDE100" />
+    <circle cx="50" cy="50" r="20" fill="#ffffff"/>
+  </svg>
+  
+  <svg class="engrane-chico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <path d="M50 0 L55 5 L62 2 L65 7 L72 5 L75 12 L82 10 L85 17 L92 15 L93 22 L98 22 L99 30 L100 50 L99 70 L98 78 L93 78 L92 85 L85 83 L82 90 L75 88 L72 95 L65 93 L62 98 L55 95 L50 100 L45 95 L38 98 L35 93 L28 95 L25 88 L18 90 L15 83 L8 85 L7 78 L2 78 L1 70 L0 50 L1 30 L2 22 L7 22 L8 15 L15 17 L18 10 L25 12 L28 5 L35 7 L38 2 L45 5 Z" fill="#FDB100" />
+    <circle cx="50" cy="50" r="20" fill="#ffffff"/>
+  </svg>
+</div>
+
+<style>
+  .engranes-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 25vh;
+    background-color: #0a0a0a;
+  }
+
+  .engrane-grande {
+    width: 100px;
+    animation: girarDerecha 6s linear infinite;
+  }
+
+  .engrane-chico {
+    width: 70px;
+    animation: girarIzquierda 4s linear infinite;
+    transform-origin: 50% 50%;
+  }
+
+  @keyframes girarDerecha {
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes girarIzquierda {
+    100% { transform: rotate(-360deg); }
+  }
+</style>
+
+    <!-- LABS 
 
     <section class="container hidden">
 
@@ -173,60 +214,9 @@
 
     </section>
 
-        <!-- LEARNING PATH -->
 
-    <section class="container hidden">
 
-        <h2 class="section-title">
-            Learning Path
-        </h2>
 
-        <div class="grid">
-
-            <div class="card">
-                <h3>Networking Fundamentals</h3>
-                <p>TCP/IP, subnetting and connectivity.</p>
-            </div>
-
-            <div class="card">
-                <h3>Routing & Switching</h3>
-                <p>VLANs, switching concepts and routing.</p>
-            </div>
-
-            <div class="card">
-                <h3>Network Services</h3>
-                <p>DNS, DHCP and VPN technologies.</p>
-            </div>
-
-            <div class="card">
-                <h3>Systems</h3>
-                <p>Linux and Windows fundamentals.</p>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- LESSONS 
-
-    <section class="container hidden">
-
-        <h2 class="section-title">
-            Lessons Learned
-        </h2>
-
-        <div class="card">
-
-            <p>
-                These labs help me understand how devices communicate,
-                how network services operate and how troubleshooting
-                techniques are applied.
-            </p>
-
-        </div>
-
-    </section> 
-    -->
 
     <!-- IMAGE MODAL -->
 
