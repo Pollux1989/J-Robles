@@ -308,20 +308,18 @@ section {
 .lab-card {
 
     flex: 0 0 320px;
-
     scroll-snap-align: center;
-
     background: var(--card);
-
     border: 1px solid var(--border);
-
     border-radius: 15px;
-
     padding: 30px;
-
     cursor: pointer;
-
     transition: 0.3s;
+    text-align: justify;
+    width: 320px;   max-width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .lab-card:hover {
@@ -480,7 +478,7 @@ footer {
     border-radius: 20px;
 
     width: 90%;
-    max-width: 900px;
+    max-width: 600px;
 
     border: 1px solid var(--yellow);
 
@@ -724,6 +722,303 @@ footer {
         0 0 35px rgba(253,225,0,0.4);
 }
 
+/* ==========================
+   NOTES
+========================== */
+
+.notes-header {
+
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 50px auto;
+
+}
+
+.notes-subtitle {
+
+    color: var(--muted);
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+
+    margin-top: 15px;
+
+}
+
+.notes-grid {
+
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(320px, 320px));
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 0 40px;
+
+}
+
+.note-card {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    transition: 0.3s;
+
+    cursor: pointer;
+}
+
+.note-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: var(--yellow);
+
+    box-shadow:
+        0 0 25px rgba(253,225,0,0.1);
+
+}
+
+.note-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+/* Ajustes para el grupo de iconos */
+.project-links {
+    align-items: center;
+    display: flex;
+    gap: 15px; /* Espacio entre el icono de GitHub y el de External */
+    margin-left: auto;
+}
+
+/* Ajuste de tamaño y color para los iconos SVG */
+.project-links a svg {
+    width:  2rem;       /* Tamaño más pequeño que la carpeta (2rem) */
+    height: 2rem;
+    color: var(--yellow); /* Color amarillo BVB */
+    transition: 0.3s;
+}
+
+/* Efecto hover para que sea más llamativo */
+.project-links a svg:hover {
+    transform: translateY(-3px);
+    stroke: rgb(28, 216, 188); /* Opcional: cambia a blanco al pasar el mouse */
+}
+
+/* Ajuste específico para el icono de carpeta si lo necesitas */
+.folder-icon {
+    font-size: 2rem;
+    color: var(--yellow);
+}
+
+.note-link {
+
+    color: var(--muted);
+
+    transition: 0.3s;
+}
+
+.note-link:hover {
+
+    color: var(--yellow);
+}
+
+.note-card h3 {
+
+    margin-bottom: 15px;
+
+    color: rgb(240, 243, 191);
+}
+
+.note-card p {
+
+    color: var(--muted);
+
+    margin-bottom: 25px;
+
+    line-height: 1.6;
+}
+
+.note-tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    list-style: none;
+}
+
+.note-tags li {
+
+    color: var(--yellow);
+
+    font-size: 0.85rem;
+}
+
+.notes-section {
+
+    max-width: 1400px;
+
+    margin: auto;
+
+}
+
+.notes-stats {
+    text-align: center;
+    margin-top: 15px;
+    color: var(--yellow);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ==========================
+   NOTE MODAL
+========================== */
+
+.note-modal {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.9);
+
+    justify-content: center;
+
+    align-items: center;
+    height: 100vh;
+
+    z-index: 9999;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.note-modal-content {
+    /* Dimensiones */
+    width: 90%;
+    max-width: 850px;
+    max-height: 80vh;
+    
+    /* Scroll y Posicionamiento */
+    overflow-y: auto; 
+    position: relative;
+    padding: 40px;
+    border-radius: 20px;
+    
+    /* Estilos visuales (BVB Cyberpunk) */
+    background: radial-gradient(circle at top right, rgba(50, 50, 0, 0.4), #000 70%);
+    border: 1px solid var(--yellow);
+    box-shadow: 
+        0 0 20px rgba(0, 0, 0, 0.5), 
+        inset 0 0 30px rgba(253, 225, 0, 0.1);
+    
+    /* Mejora de scroll para móviles */
+    -webkit-overflow-scrolling: touch; 
+}
+
+/* Scrollbar personalizado */
+.note-modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+.note-modal-content::-webkit-scrollbar-track {
+    background: #000;
+}
+.note-modal-content::-webkit-scrollbar-thumb {
+    background: var(--yellow);
+    border-radius: 10px;
+    border: 2px solid #000; /* Le da un toque más técnico */
+}
+.note-modal-content::-webkit-scrollbar-thumb:hover {
+    background: #fff; /* Cambio de color al hacer hover, muy pro */
+}
+
+.note-modal-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--yellow);
+    box-shadow: 0 0 15px var(--yellow);
+}
+.note-modal-content h2 {
+
+    color: var(--yellow);
+text-shadow: 0 0 7px var(--yellow);
+    margin-bottom: 30px;
+}
+
+#noteText {
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 0.5px;
+}
+
+#noteText code {
+    display: block; /* Para que cada comando quede en su propia línea */
+    background: rgba(253, 225, 0, 0.05);
+    color: var(--yellow);
+    text-shadow: 0 0 5px rgb(253, 255, 0, 0.5);
+    transition: all 0.3 ease;
+    padding: 8px 12px;
+    margin: 10px 0;
+    border-left: 4px solid var(--yellow);
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    text-align: justify;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    overflow-x: auto; /* Por si el comando es muy largo */
+}
+
+#noteText code:hover {
+    background: rgba(253, 225, 0, 0.15);
+    cursor: default;
+}
+
+.note-close {
+
+    position: absolute;
+
+    top: 20px;
+
+    right: 25px;
+
+    background: none;
+
+    border: none;
+
+    color: var(--yellow);
+
+    font-size: 2rem;
+
+    cursor: pointer;
+}
+
 /* ===========================
    RESPONSIVE (UNIFICADO)
 =========================== */
@@ -765,6 +1060,7 @@ footer {
 
     .hero p {
         padding: 0 10px;
+        text-align: justify;
     }
 
     .btn-group {
@@ -813,6 +1109,18 @@ footer {
     .next {
         right: 5px;
     }
+
+    .notes-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .note-card {
+
+        min-width: 260px;
+
+    }
 /* ==========================
    TABLETS
 ========================== */
@@ -820,11 +1128,12 @@ footer {
 @media (max-width: 768px) {
 
     .carousel-container {
-        padding: 0 30px;
+        padding: 0 25px;
     }
 
     .lab-card {
-        flex: 0 0 85%;
+        flex: 0 0 calc(100vw - 70px);
+        width: calc(100vw - 70px);
         padding: 25px;
     }
 
@@ -832,6 +1141,15 @@ footer {
         font-size: 2.5rem;
     }
 
+    .notes-grid {
+        padding: 0 25px;
+    }
+
+    .note-card {
+        flex: 0 0 calc(100vn -70px);
+        width: calc(100vn - 70px);
+        padding: 25px;
+    }
 }
 
 /* ==========================
@@ -844,26 +1162,46 @@ footer {
         padding: 0 25px;
     }
 
+    .notes-grid {
+        padding: 0 25px;
+    }
+
     .lab-card {
 
         flex: 0 0 calc(100vw - 70px);
-
         padding: 20px;
+        text-align: justify;
     }
 
     .lab-card h3 {
         font-size: 1.1rem;
+        color: #e9f09f;
     }
 
     .lab-card p {
         font-size: 0.9rem;
+        text-align: justify;
     }
 
     .carousel-arrow {
         font-size: 2rem;
     }
 
-}
+    .note-card {
 
+        flex: 0 0 calc(100vw - 70px);
+        padding: 20px;
+        text-align: justify;
+    }
+
+    .note-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .note-card p {
+        font-size: 0.9rem;
+        text-align: justify;
+    }
+}
 }
 
