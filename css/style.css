@@ -818,7 +818,7 @@ footer {
 /* Efecto hover para que sea más llamativo */
 .project-links a svg:hover {
     transform: translateY(-3px);
-    stroke: rgb(28, 216, 188); /* Opcional: cambia a blanco al pasar el mouse */
+    stroke: rgb(121, 14, 120); /* Opcional: cambia a blanco al pasar el mouse */
 }
 
 /* Ajuste específico para el icono de carpeta si lo necesitas */
